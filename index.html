@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADO Extension</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="initial">
+        <div class="content-top">
+          <img class="img-logo" src="https://user-images.githubusercontent.com/1874103/46415699-cfc5cf00-c6f3-11e8-9bcc-2fc2bf1759ec.png" />
+          <h1>Azure DevOps Extension</h1>
+        </div>
+        <div class="content-bottom">
+          <a class="btn" id="signIn" >SIGN IN WITH MICROSOFT ACCOUNT</a>
+        </div>
+    </div>
+    <div class="selectProject" style="display: none;"></div>
+      <div class="createdProjects">
+        <table class="tableProj">
+          <thead>
+            <th>Organization</th>
+            <th>Project</th>
+            <th></th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <button id="getTable">Load table</button>
+      </div>
+      <div class="addProject">
+        <div class="projectDetails">
+          <div class="orgName">
+            <input type="text" class="textField" placeholder="Organization Name" id="org">
+          </div>
+          <div class="projName">
+            <input type="text" class="textField" placeholder="Project Name" id="proj">
+          </div>
+        </div>
+        <div class="addButton">
+          <a class="btn2" id="addProj">ADD PROJECT</a>
+        </div>
+      </div>
+    </div>
+    <div class="displayTasks" style="display: none;">
+      <table class = "table table-striped ">
+        <tr class = "bg-info fixtable">
+          <th>ID</th>
+          <th>Name</th>
+          <th>
+            <div class="dropdown">
+            <button class="dropbtn">Task</button>
+            <div class="dropdown-content">
+              <a href="#">Bug</a>
+              <a href="#">Task</a>
+              
+            </div>
+          </th>
+        </tr>
+
+        <tbody id = "myTable"></tbody>
+      </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
