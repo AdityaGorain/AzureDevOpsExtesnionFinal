@@ -1,234 +1,129 @@
+html{
+  height: 100%;
+  margin: 0 ;
+  padding: 0;
+}
 body {
-    height: 320px;
-    margin: 0;
     color: #222;
     font-family: 'Kumbh Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(0, 120, 215);
-    background: linear-gradient(0deg, rgba(0, 120, 215, 1) 0%, rgb(3, 106, 165) 100%);
-  }
   
-  .initial,.selectProject,.displayTasks {
-    background: white;
-    width: 400px;
-    height: 300px;
     border-radius: 40px;
+
+    margin: 20px;
+    background:white;
+    width: 520px;
+    height: 60px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 3px 16px #222;
-  }
-
-  .displayTasks{
-    overflow-y: scroll;
   }
   
+  /* .displayTasks {
+    margin: 20px;
+    background: white;
+    width: 520px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+  } */
   .fixtable{
     position: fixed;
     width: 100%;
-  }
-  .content-bottom {
-    color: white;
-    margin: 10px 0;
-  }
-  
-  .content-top{
-    height: 150px;
-  }
-
-  h1 {
-    font-family: 'Arvo', serif;
-    font-size: 26px;
-    margin: 32px auto 24px;
-    line-height: 20px;
-  }
-  
-  .img-logo {
-    margin-top: 32px;
-    width: 120px;
-    height: 120px;
-  }
-  
+  } 
   .btn {
     text-decoration: none;
     display: block;
-    width: 220px;
-    padding-top: 2px;
-    border-radius: 20px;
+    width: 30%;
+    padding: 5px;
     color: white;
     background: rgba(0, 120, 215, 1);
-    margin: 0 auto;
+    margin: 5px;
     border: none;
     font-size: 14px;
-    transition: 0.8s;
     position: relative;
     overflow: hidden;
     text-align: center;
+    float: right;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
   }
-  .btn2{
-    text-decoration: none;
-    display: block;
-    width: 180px;
-    padding-top: 2px;
-    border-radius: 20px;
+  .btn:hover{
     color: white;
-    background: rgba(0, 120, 215, 1);
-    margin: 0 auto;
-    border: none;
-    font-size: 14px;
-    transition: 0.8s;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    height: 70%;
-    margin: 10px;
-    white-space: pre-line;
   }
-.btn:hover{
-    width: 240px;
-}
-.btn2:hover{
-  width: 200px;
-}
-.btn::before,.btn2::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: #fff;
-    z-index: -1;
-    transition: 0.8s;
-    top: 0;
-    border-radius: 0 0 50% 50%;
-}
-.btn:hover::before,.btn2:hover::before{
-    height: 180%;
-}
-
-.createdProjects{
-  margin: 10px;
-  height: 200px;
-  float: center;
-}
-.addProject{
-  color: white;
-  display: flex;
-  flex-direction: row;
-  margin: 10px 0;
-}
-.projectDetails{
-  float: left;
-  margin: 10px 0;
-  height: 70%;
-}
-.addButton{
-  float: right;
-  margin: 10px 0;
-  align-Items: center;
-}
-
-.textField{
-  margin-left: 10px;
-}
-
-.deleteProj,.callAPI{
-  text-decoration: none;
-    display: block;
-    width: 55px;
-    padding-top: 2px;
-    border-radius: 4px;
-    color: white;
-    background: rgba(0, 120, 215, 1);
-    margin: 0 auto;
-    border: none;
-    font-size: 14px;
-    transition: 0.8s;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-.deleteProj:hover,.callAPI:hover{
-  width: 60px;
-}
-.deleteProj::before,.callAPI::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: #fff;
-  z-index: -1;
-  transition: 0.8s;
-  top: 0;
-  border-radius: 0 0 50% 50%;
-}
-.deleteProj:hover::before,.callAPI:hover::before{
-  height: 180%;
-}
-
-.tableProj{
-  margin: 10px;
-  overflow: hidden;
-  font-size: 14px;
-  width: 360px;
-  float: inline-end;
-}
-.tableProj thead{
-  background: rgba(0, 120, 215, 1);
-  color: #fff;
-}
-
-.tableProj tbody{
-  display: block;
-  height: 150px;
-  overflow-y: auto;
-}
-
-.tableProj tr{
-  display: block;
-}
-
 th,td{
-  width: 120px;
+  width: 230px;
+  height: 50px;
 }
 
 #myTable{
   overflow: hidden;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+select#taskMenu {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  float: right;
+}
+select#orgMenu {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  float: left;
+  
+}
+select#projMenu {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.headMenu{
+  width: 100%;
+
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+
+.table{
+  float: center;
   display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  background: white;
+  padding: 5px;
+}
+.refreshBtn{
+  float: right;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.headMenu{
+  display: flex;
+  flex-direction: row;
+  width: 520px;
+  padding-bottom:10px;
+}
+.dropdown{
+  width: 25%;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+  border: none;
+  
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.table tr{
+  position: sticky;
+  top: 0;
+  height: 50px;
+  background-color: white;
+}
