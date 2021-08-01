@@ -11,59 +11,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="initial">
-        <div class="content-top">
-          <img class="img-logo" src="https://user-images.githubusercontent.com/1874103/46415699-cfc5cf00-c6f3-11e8-9bcc-2fc2bf1759ec.png" />
-          <h1>Azure DevOps Extension</h1>
-        </div>
-        <div class="content-bottom">
-          <a class="btn" id="signIn" >SIGN IN WITH MICROSOFT ACCOUNT</a>
-        </div>
-    </div>
-    <div class="selectProject" style="display: none;"></div>
-      <div class="createdProjects">
-        <table class="tableProj">
-          <thead>
-            <th>Organization</th>
-            <th>Project</th>
-            <th></th>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-        <button id="getTable">Load table</button>
+      <div class="headMenu">
+        <select id = "orgMenu" class="dropdown">
+          <option id = "org" value="Organization">Organization</option>
+        </select>
+        <select id = "projMenu" class="dropdown">
+          <option id = "proj" value="Project">Project</option>
+        </select>
+        <select id = "taskMenu" class="dropdown">
+          <option id = "task" value="Task">Task</option>
+          <option id = "issues" value="Issue">Bug</option>
+          <option id = "epic" value="Epic">Epic</option>
+        </select>
+        <button id="refreshButton" class="btn">Refresh</button>
       </div>
-      <div class="addProject">
-        <div class="projectDetails">
-          <div class="orgName">
-            <input type="text" class="textField" placeholder="Organization Name" id="org">
-          </div>
-          <div class="projName">
-            <input type="text" class="textField" placeholder="Project Name" id="proj">
-          </div>
-        </div>
-        <div class="addButton">
-          <a class="btn2" id="addProj">ADD PROJECT</a>
-        </div>
-      </div>
-    </div>
-    <div class="displayTasks" style="display: none;">
-      <table class = "table table-striped ">
+    <div class="taskTable">
+      <table class = "table table-striped">
         <tr class = "bg-info fixtable">
           <th>ID</th>
           <th>Name</th>
-          <th>
-            <div class="dropdown">
-            <button class="dropbtn">Task</button>
-            <div class="dropdown-content">
-              <a href="#">Bug</a>
-              <a href="#">Task</a>
-              
-            </div>
-          </th>
+          <th>Area Path</th>
+          <th>Priority</th>
         </tr>
-
-        <tbody id = "myTable"></tbody>
+        <tbody id = "myTable" class="tableBody">
+        </tbody>
       </table>
     </div>
     <script src="app.js"></script>
