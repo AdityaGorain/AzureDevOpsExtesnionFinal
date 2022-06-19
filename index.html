@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADO Extension</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Microsoft identity platform</title>
+    <link rel="SHORTCUT ICON" href="./favicon.svg" type="image/x-icon">
+    
+    <!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
+    <script src="msal.js"  crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-      <div class="headMenu">
-        <select id = "orgMenu" class="dropdown">
-          <option id = "org" value="Organization">Organization</option>
-        </select>
-        <select id = "projMenu" class="dropdown">
-          <option id = "proj" value="Project">Project</option>
-        </select>
-        <select id = "taskMenu" class="dropdown">
-          <option id = "task" value="Task">Task</option>
-          <option id = "issues" value="Issue">Bug</option>
-          <option id = "epic" value="Epic">Epic</option>
-        </select>
-        <button id="refreshButton" class="btn">Refresh</button>
+    <!-- To help ensure reliability, Microsoft provides a second CDN -->
+    <!--<script type="text/javascript">
+      if(typeof Msal === 'undefined')document.write(unescape("%3Cscript src='browser.js' type='text/javascript' crossorigin='anonymous' %3E%3C/script%3E"));
+    </script>-->
+
+    <!-- adding Bootstrap 4 for UI components  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Azure DevOps</a>
+      <div class="btn-group ml-auto dropleft">
+        <button type="button" id="signIn" class="btn btn-secondary">Sign-in</button>
+        <button type="button" id="signOut" class="btn btn-success d-none">Sign-out</button>
       </div>
-    <div class="taskTable">
-      <table class = "table table-striped">
-        <tr class = "bg-info fixtable">
-          <th>ID</th>
-          <th>Name</th>
-          <th>Area Path</th>
-          <th>Priority</th>
-        </tr>
-        <tbody id = "myTable" class="tableBody">
-        </tbody>
-      </table>
+    </nav>
+    <br>
+    <h5 id="title-div" class="card-header text-center">JavaScript single-page application secured with MSAL.js</h5>
+    <h5 id="welcome-div" class="card-header text-center d-none"></h5>
+    <br>
+
+    <!-- Content -->
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 id="label" class="card-title">Sign-in with the Microsoft identity platform</h5>
+        <pre id="response" class="card-text"></pre>
+        <button type="button" id="callApiButton" class="btn btn-primary d-none" onclick="passTokenToApi()">Call DevOps Rest API</button>
+      </div>
     </div>
-    <script src="app.js"></script>
-</body>
+
+    <!-- importing bootstrap.js and supporting js libraries -->
+    <script src="jquery-3.4.1.slim.min.js"  crossorigin="anonymous"></script>
+    <script src="popper.min.js"  crossorigin="anonymous"></script>  
+    <script src="bootstrap.min.js"  crossorigin="anonymous"></script>
+    
+    <!-- importing app scripts (load order is important) -->
+    <script type="text/javascript" src="./config.js"></script>
+    <script type="text/javascript" src="./ui.js"></script>
+    <script type="text/javascript" src="./fetch.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+  </body>
 </html>
